@@ -4,28 +4,28 @@ make[2]: Entering directory '/home/frank/application/Public/Qlattice-cc/examples
 mpic++ -O2 -Wall -std=c++0x -o qlat.x -fopenmp -O2 -fno-strict-aliasing -Wall -I$HOME/qlat-builds/0.1/include -I$HOME/qlat-builds/0.1/include/eigen3 *.C -L$HOME/qlat-builds/0.1/lib -lgsl -lgslcblas -lm -lfftw3_omp -lfftw3 -lcrypto -lhash-cpp 2>&1 | grep --color=always 'error:\|' || true
 make[2]: Leaving directory '/home/frank/application/Public/Qlattice-cc/examples/lbl-muon-part'
 
-real	0m4.815s
-user	0m4.572s
-sys	0m0.152s
+real	0m4.843s
+user	0m4.664s
+sys	0m0.164s
 [ -f qlat.x ]
 . $HOME/qlat-builds/0.1/setenv.sh ; time mpirun -x OMP_NUM_THREADS=8 --np 16 ./qlat.x
 Qlat::begin : MPI Initialized. NumNode = 16
-Qlat::GeometryNode::init() : idNode =     0 ; coorNode = 0x0x0x0
 Qlat::GeometryNode::init() : idNode =    10 ; coorNode = 0x0x1x2
-Qlat::GeometryNode::init() : idNode =     4 ; coorNode = 0x0x0x1
-Qlat::GeometryNode::init() : idNode =     2 ; coorNode = 0x0x1x0
-Qlat::GeometryNode::init() : idNode =     8 ; coorNode = 0x0x0x2
-Qlat::GeometryNode::init() : idNode =    12 ; coorNode = 0x0x0x3
-Qlat::GeometryNode::init() : idNode =     6 ; coorNode = 0x0x1x1
-Qlat::GeometryNode::init() : idNode =    14 ; coorNode = 0x0x1x3
-Qlat::GeometryNode::init() : idNode =     9 ; coorNode = 0x1x0x2
+Qlat::GeometryNode::init() : idNode =     0 ; coorNode = 0x0x0x0
 Qlat::GeometryNode::init() : idNode =     1 ; coorNode = 0x1x0x0
-Qlat::GeometryNode::init() : idNode =     3 ; coorNode = 0x1x1x0
-Qlat::GeometryNode::init() : idNode =    13 ; coorNode = 0x1x0x3
-Qlat::GeometryNode::init() : idNode =     5 ; coorNode = 0x1x0x1
+Qlat::GeometryNode::init() : idNode =     9 ; coorNode = 0x1x0x2
+Qlat::GeometryNode::init() : idNode =    14 ; coorNode = 0x0x1x3
+Qlat::GeometryNode::init() : idNode =     4 ; coorNode = 0x0x0x1
 Qlat::GeometryNode::init() : idNode =     7 ; coorNode = 0x1x1x1
 Qlat::GeometryNode::init() : idNode =    15 ; coorNode = 0x1x1x3
+Qlat::GeometryNode::init() : idNode =    12 ; coorNode = 0x0x0x3
+Qlat::GeometryNode::init() : idNode =     6 ; coorNode = 0x0x1x1
+Qlat::GeometryNode::init() : idNode =     8 ; coorNode = 0x0x0x2
+Qlat::GeometryNode::init() : idNode =     2 ; coorNode = 0x0x1x0
+Qlat::GeometryNode::init() : idNode =     5 ; coorNode = 0x1x0x1
+Qlat::GeometryNode::init() : idNode =    13 ; coorNode = 0x1x0x3
 Qlat::GeometryNode::init() : idNode =    11 ; coorNode = 0x1x1x2
+Qlat::GeometryNode::init() : idNode =     3 ; coorNode = 0x1x1x0
 Qlat::begin : MPI Cart created. GeometryNode =
 { initialized = true
 , numNode     = 16
@@ -63,7 +63,7 @@ Main::displayGammas : ii * gamma2 =
  (0,0)  (0,0)  (0,0) (-1,0)
 (-1,0)  (0,0)  (0,0)  (0,0)
  (0,0)  (1,0)  (0,0)  (0,0)
-Timer::stop  :                  displayGammas : 95.0%        1 calls. Last 9.170E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :                  displayGammas : 98.3%        1 calls. Last 2.371E-03 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :        displaySpinPropagator4d :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 Main::displaySpinPropagator4d : geo =
 { initialized = true
@@ -85,77 +85,77 @@ fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 0
 Timer::start :      fftComplexFieldPlan::init :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 2097152
 fftComplexFieldPlan::init : free 2097152
-Timer::stop  :      fftComplexFieldPlan::init : 13.6%        1 calls. Last 3.970E-04 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :   fftComplexFieldPlan::getPlan : 15.4%        1 calls. Last 4.511E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init : 66.5%        1 calls. Last 1.110E-02 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :   fftComplexFieldPlan::getPlan : 66.7%        1 calls. Last 1.116E-02 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :       fftComplexFieldDirs-fftw :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-Timer::stop  :       fftComplexFieldDirs-fftw : 28.4%        1 calls. Last 1.797E-02 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :            fftComplexFieldDirs : 96.7%        1 calls. Last 7.206E-02 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :       fftComplexFieldDirs-fftw :  8.7%        1 calls. Last 7.666E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :            fftComplexFieldDirs : 94.1%        1 calls. Last 8.799E-02 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 1
-Timer::start :      fftComplexFieldPlan::init :  0.5%        2 calls. Last 3.970E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init : 11.9%        2 calls. Last 1.110E-02 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 2097152
 fftComplexFieldPlan::init : free 2097152
-Timer::stop  :      fftComplexFieldPlan::init :  0.7%        2 calls. Last 9.084E-05 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init : 12.0%        2 calls. Last 1.109E-04 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :    fftComplexFieldDirs-getData :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 Timer::start :                   getDataDirMu :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-Timer::stop  :                   getDataDirMu : 24.7%        1 calls. Last 2.773E-02 secs   0.076 Gflops (2.097E+06 flops)
-Timer::stop  :    fftComplexFieldDirs-getData : 25.1%        1 calls. Last 2.822E-02 secs   0.074 Gflops (2.097E+06 flops)
+Timer::stop  :                   getDataDirMu :  5.7%        1 calls. Last 6.435E-03 secs   0.326 Gflops (2.097E+06 flops)
+Timer::stop  :    fftComplexFieldDirs-getData :  6.7%        1 calls. Last 7.590E-03 secs   0.276 Gflops (2.097E+06 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 2
-Timer::start :      fftComplexFieldPlan::init :  0.3%        3 calls. Last 9.084E-05 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  5.5%        3 calls. Last 1.109E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 2097152
 fftComplexFieldPlan::init : free 2097152
-Timer::stop  :      fftComplexFieldPlan::init :  4.4%        3 calls. Last 7.977E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  8.3%        3 calls. Last 6.167E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 3
-Timer::start :      fftComplexFieldPlan::init :  2.5%        4 calls. Last 7.977E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  5.2%        4 calls. Last 6.167E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 2097152
 fftComplexFieldPlan::init : free 2097152
-Timer::stop  :      fftComplexFieldPlan::init :  3.4%        4 calls. Last 3.190E-03 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :                fftComplexField : 99.6%        1 calls. Last 6.540E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  5.5%        4 calls. Last 1.015E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :                fftComplexField : 99.1%        1 calls. Last 5.971E-01 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :        propMomSpinPropagator4d :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-Timer::stop  :        propMomSpinPropagator4d :  5.1%        1 calls. Last 3.547E-02 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :        propMomSpinPropagator4d :  6.0%        1 calls. Last 3.844E-02 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 4
-Timer::start :      fftComplexFieldPlan::init :  1.7%        5 calls. Last 3.190E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  2.9%        5 calls. Last 1.015E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 2097152
 fftComplexFieldPlan::init : free 2097152
-Timer::stop  :      fftComplexFieldPlan::init :  1.7%        5 calls. Last 4.849E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  3.0%        5 calls. Last 6.909E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 5
-Timer::start :      fftComplexFieldPlan::init :  1.7%        6 calls. Last 4.849E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  2.8%        6 calls. Last 6.909E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 2097152
 fftComplexFieldPlan::init : free 2097152
-Timer::stop  :      fftComplexFieldPlan::init :  2.0%        6 calls. Last 2.438E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  2.9%        6 calls. Last 8.881E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 6
-Timer::start :      fftComplexFieldPlan::init :  1.8%        7 calls. Last 2.438E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  2.1%        7 calls. Last 8.881E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 2097152
 fftComplexFieldPlan::init : free 2097152
-Timer::stop  :      fftComplexFieldPlan::init :  1.8%        7 calls. Last 7.641E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  2.3%        7 calls. Last 1.488E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 7
-Timer::start :      fftComplexFieldPlan::init :  1.6%        8 calls. Last 7.641E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  2.0%        8 calls. Last 1.488E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 2097152
 fftComplexFieldPlan::init : free 2097152
-Timer::stop  :      fftComplexFieldPlan::init :  2.4%        8 calls. Last 7.125E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  2.1%        8 calls. Last 1.046E-03 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :                  fieldOperator :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-Timer::stop  :                  fieldOperator :  0.6%        1 calls. Last 8.061E-03 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :           propSpinPropagator4d : 99.8%        1 calls. Last 1.257E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :                  fieldOperator :  0.1%        1 calls. Last 1.954E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :           propSpinPropagator4d : 99.6%        1 calls. Last 1.310E+00 secs   0.000 Gflops (0.000E+00 flops)
 Main::displaySpinPropagator4d : xgsnk = 0x0x0x0 .
 Main::displaySpinPropagator4d : prop[xgsnk] =
              (0.00316882,0)                       (0,0)    (3.71293e-19,1.8535e-19)  (3.71293e-19,-3.71293e-19)
                       (0,0)              (0.00316882,0)   (3.71293e-19,3.71293e-19)   (-3.71293e-19,1.8535e-19)
   (-3.71293e-19,1.8535e-19)  (-3.71293e-19,3.71293e-19)              (0.00316882,0)                       (0,0)
 (-3.71293e-19,-3.71293e-19)    (3.71293e-19,1.8535e-19)                       (0,0)              (0.00316882,0)
-Timer::stop  :        displaySpinPropagator4d : 99.9%        1 calls. Last 1.260E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :        displaySpinPropagator4d : 99.8%        1 calls. Last 1.315E+00 secs   0.000 Gflops (0.000E+00 flops)
 Timer::display-start :  fname : time% number of calls; Avg,Tot secs; Avg,Tot flops; Gflops
-Timer::display :                  displayGammas :  0.073%        1 calls; 9.17E-04,9.17E-04 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                  fieldOperator :  0.637%        1 calls; 8.06E-03,8.06E-03 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :      fftComplexFieldPlan::init :  1.775%        8 calls; 2.81E-03,2.25E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :   fftComplexFieldPlan::getPlan :  2.717%        8 calls; 4.30E-03,3.44E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :        propMomSpinPropagator4d :  2.800%        1 calls; 3.55E-02,3.55E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :       fftComplexFieldDirs-fftw :  3.480%        8 calls; 5.51E-03,4.41E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                   getDataDirMu : 47.501%       20 calls; 3.01E-02,6.02E-01 secs; 2.10E+06,4.19E+07 flops;  0.07 Gflops
-Timer::display :    fftComplexFieldDirs-getData : 47.378%       20 calls; 3.01E-02,6.02E-01 secs; 2.10E+06,4.19E+07 flops;  0.07 Gflops
-Timer::display :            fftComplexFieldDirs : 94.764%        8 calls; 1.51E-01,1.21E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                fftComplexField : 94.734%        2 calls; 6.03E-01,1.21E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :           propSpinPropagator4d : 98.732%        1 calls; 1.26E+00,1.26E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :        displaySpinPropagator4d : 98.942%        1 calls; 1.26E+00,1.26E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display-end   :  --------------------- total 1.2619E+00 secs ----------------------
+Timer::display :                  fieldOperator :  0.148%        1 calls; 1.95E-03,1.95E-03 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                  displayGammas :  0.180%        1 calls; 2.37E-03,2.37E-03 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :      fftComplexFieldPlan::init :  1.706%        8 calls; 2.81E-03,2.25E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :       fftComplexFieldDirs-fftw :  2.240%        8 calls; 3.69E-03,2.96E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :   fftComplexFieldPlan::getPlan :  2.646%        8 calls; 4.37E-03,3.49E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :        propMomSpinPropagator4d :  2.912%        1 calls; 3.84E-02,3.84E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                   getDataDirMu : 44.597%       20 calls; 2.94E-02,5.89E-01 secs; 2.10E+06,4.19E+07 flops;  0.07 Gflops
+Timer::display :    fftComplexFieldDirs-getData : 44.676%       20 calls; 2.95E-02,5.90E-01 secs; 2.10E+06,4.19E+07 flops;  0.07 Gflops
+Timer::display :            fftComplexFieldDirs : 95.868%        8 calls; 1.58E-01,1.27E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                fftComplexField : 95.843%        2 calls; 6.33E-01,1.27E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :           propSpinPropagator4d : 99.100%        1 calls; 1.31E+00,1.31E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :        displaySpinPropagator4d : 99.416%        1 calls; 1.32E+00,1.32E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display-end   :  --------------------- total 1.3180E+00 secs ----------------------
 Timer::start :                    lblMuonPart :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 Main::lblMuonPart : geo =
 { initialized = true
@@ -172,12 +172,11 @@ Main::lblMuonPart : geo =
 Timer::start :    lblMagneticMomentSpinMatrix :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 Timer::start :             setWallSourcePlusM :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 Timer::start :              setBoxSourcePlusM :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-Timer::stop  :              setBoxSourcePlusM :  0.1%        1 calls. Last 1.256E-03 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :             setWallSourcePlusM :  0.2%        1 calls. Last 2.071E-03 secs   0.000 Gflops (0.000E+00 flops)
-Timer::start :           propSpinPropagator4d : 95.6%        2 calls. Last 1.257E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :           propSpinPropagator4d : 97.5%        2 calls. Last 1.013E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::start :           propSpinPropagator4d : 97.4%        3 calls. Last 1.013E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :           propSpinPropagator4d : 98.2%        3 calls. Last 1.046E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :              setBoxSourcePlusM :  0.2%        1 calls. Last 2.677E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :             setWallSourcePlusM :  0.6%        1 calls. Last 7.495E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :           propSpinPropagator4d : 96.9%        2 calls. Last 1.310E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :           propSpinPropagator4d : 98.4%        2 calls. Last 1.242E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :           propSpinPropagator4d : 98.3%        3 calls. Last 1.242E+00 secs   0.000 Gflops (0.000E+00 flops)
 Main::lblMagneticMomentSpinMatrix : src =
                 (19.9989,0)                       (0,0)            (-0.000314905,0) (-7.31793e-20,-2.76838e-20)
                       (0,0)                 (19.9989,0)  (-7.31793e-20,2.76838e-20)            (-0.000314905,0)
@@ -188,7 +187,8 @@ Main::lblMagneticMomentSpinMatrix : snk =
                       (0,0)                 (19.9916,0) (-6.75343e-19,-5.90745e-19)            (-0.000458901,0)
            (-0.000458901,0)  (6.75343e-19,-5.90745e-19)                 (19.9916,0)                       (0,0)
   (6.75343e-19,5.90745e-19)            (-0.000458901,0)                       (0,0)                 (19.9916,0)
-Timer::stop  :    lblMagneticMomentSpinMatrix : 62.2%        1 calls. Last 2.109E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :           propSpinPropagator4d : 98.8%        3 calls. Last 1.047E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :    lblMagneticMomentSpinMatrix : 63.7%        1 calls. Last 2.324E+00 secs   0.000 Gflops (0.000E+00 flops)
 Main::lblMuonPart : bs[0] =
                  (0,0)  (4.99766,3.06679e-40)                  (0,0)  (4.99766,3.06679e-40)
 (4.99766,-3.06679e-40)                  (0,0) (4.99766,-3.06679e-40)                  (0,0)
@@ -213,67 +213,67 @@ Timer::start :            setPointSourcePlusM :  0.0%        1 calls. Last -NAN 
 Timer::stop  :            setPointSourcePlusM :  0.0%        1 calls. Last 0.000E+00 secs    -nan Gflops (0.000E+00 flops)
 Timer::start :               propPhotonInvert :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 8
-Timer::start :      fftComplexFieldPlan::init :  0.7%        9 calls. Last 7.125E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  0.6%        9 calls. Last 1.046E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 524288
 fftComplexFieldPlan::init : free 524288
-Timer::stop  :      fftComplexFieldPlan::init :  0.7%        9 calls. Last 3.622E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  0.6%        9 calls. Last 4.230E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 9
-Timer::start :      fftComplexFieldPlan::init :  0.7%       10 calls. Last 3.622E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  0.6%       10 calls. Last 4.230E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 524288
 fftComplexFieldPlan::init : free 524288
-Timer::stop  :      fftComplexFieldPlan::init :  0.7%       10 calls. Last 3.791E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  0.6%       10 calls. Last 7.691E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 10
-Timer::start :      fftComplexFieldPlan::init :  0.7%       11 calls. Last 3.791E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  0.6%       11 calls. Last 7.691E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 524288
 fftComplexFieldPlan::init : free 524288
-Timer::stop  :      fftComplexFieldPlan::init :  0.7%       11 calls. Last 6.950E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  0.7%       11 calls. Last 1.406E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 11
-Timer::start :      fftComplexFieldPlan::init :  0.7%       12 calls. Last 6.950E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  0.7%       12 calls. Last 1.406E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 524288
 fftComplexFieldPlan::init : free 524288
-Timer::stop  :      fftComplexFieldPlan::init :  0.7%       12 calls. Last 7.720E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  0.7%       12 calls. Last 3.082E-03 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :            propMomPhotonInvert :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-Timer::stop  :            propMomPhotonInvert :  0.1%        1 calls. Last 3.379E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :            propMomPhotonInvert :  0.1%        1 calls. Last 3.315E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 12
-Timer::start :      fftComplexFieldPlan::init :  0.7%       13 calls. Last 7.720E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  0.7%       13 calls. Last 3.082E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 524288
 fftComplexFieldPlan::init : free 524288
-Timer::stop  :      fftComplexFieldPlan::init :  0.7%       13 calls. Last 9.160E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  0.7%       13 calls. Last 4.871E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 13
-Timer::start :      fftComplexFieldPlan::init :  0.7%       14 calls. Last 9.160E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  0.7%       14 calls. Last 4.871E-04 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 524288
 fftComplexFieldPlan::init : free 524288
-Timer::stop  :      fftComplexFieldPlan::init :  0.7%       14 calls. Last 6.168E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  0.8%       14 calls. Last 2.050E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 14
-Timer::start :      fftComplexFieldPlan::init :  0.7%       15 calls. Last 6.168E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  0.8%       15 calls. Last 2.050E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 524288
 fftComplexFieldPlan::init : free 524288
-Timer::stop  :      fftComplexFieldPlan::init :  0.8%       15 calls. Last 4.426E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  0.8%       15 calls. Last 1.044E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::getPlan : start to make a new fft plan with id = 15
-Timer::start :      fftComplexFieldPlan::init :  0.8%       16 calls. Last 4.426E-03 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :      fftComplexFieldPlan::init :  0.8%       16 calls. Last 1.044E-03 secs   0.000 Gflops (0.000E+00 flops)
 fftComplexFieldPlan::init : malloc 524288
 fftComplexFieldPlan::init : free 524288
-Timer::stop  :      fftComplexFieldPlan::init :  0.9%       16 calls. Last 2.204E-03 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :               propPhotonInvert : 13.7%        1 calls. Last 5.380E-01 secs   0.000 Gflops (0.000E+00 flops)
-Timer::start :               propPhotonInvert : 13.7%        2 calls. Last 5.380E-01 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :               propPhotonInvert : 22.9%        2 calls. Last 4.704E-01 secs   0.000 Gflops (0.000E+00 flops)
-Timer::start :               propPhotonInvert : 22.9%        3 calls. Last 4.704E-01 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :               propPhotonInvert : 29.7%        3 calls. Last 4.265E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :      fftComplexFieldPlan::init :  0.8%       16 calls. Last 6.649E-04 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :               propPhotonInvert : 13.1%        1 calls. Last 5.536E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :               propPhotonInvert : 13.1%        2 calls. Last 5.536E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :               propPhotonInvert : 22.5%        2 calls. Last 5.071E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :               propPhotonInvert : 22.5%        3 calls. Last 5.071E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :               propPhotonInvert : 28.7%        3 calls. Last 4.145E-01 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :                    lblMuonLine :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-Timer::start :           propSpinPropagator4d : 68.0%        4 calls. Last 1.046E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :           propSpinPropagator4d : 73.5%        4 calls. Last 1.018E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :           propSpinPropagator4d : 69.8%        4 calls. Last 1.047E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :           propSpinPropagator4d : 75.3%        4 calls. Last 1.169E+00 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start : sequentialPhotonSpinPropagator :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-Timer::stop  : sequentialPhotonSpinPropagator :  0.8%        1 calls. Last 4.566E-02 secs   0.000 Gflops (0.000E+00 flops)
-Timer::start :           propSpinPropagator4d : 72.7%        5 calls. Last 1.018E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :           propSpinPropagator4d : 77.3%        5 calls. Last 1.200E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::start :           propSpinPropagator4d : 76.7%        6 calls. Last 1.200E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :           propSpinPropagator4d : 79.7%        6 calls. Last 1.097E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::start :           propSpinPropagator4d : 79.4%        7 calls. Last 1.097E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :           propSpinPropagator4d : 81.9%        7 calls. Last 1.122E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  : sequentialPhotonSpinPropagator :  0.4%        1 calls. Last 2.442E-02 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :           propSpinPropagator4d : 75.0%        5 calls. Last 1.169E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :           propSpinPropagator4d : 79.0%        5 calls. Last 1.220E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :           propSpinPropagator4d : 78.7%        6 calls. Last 1.220E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :           propSpinPropagator4d : 81.4%        6 calls. Last 1.135E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::start :           propSpinPropagator4d : 80.8%        7 calls. Last 1.135E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :           propSpinPropagator4d : 83.0%        7 calls. Last 1.106E+00 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :         contractSpinPropagator :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-Timer::stop  :         contractSpinPropagator :  0.1%        1 calls. Last 1.065E-02 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :                    lblMuonLine : 49.1%        1 calls. Last 4.659E+00 secs   0.000 Gflops (0.000E+00 flops)
-Timer::stop  :            lblMuonPartPointSrc : 64.3%        1 calls. Last 6.100E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :         contractSpinPropagator :  0.4%        1 calls. Last 3.560E-02 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :                    lblMuonLine : 48.4%        1 calls. Last 4.826E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :            lblMuonPartPointSrc : 63.3%        1 calls. Last 6.306E+00 secs   0.000 Gflops (0.000E+00 flops)
 Main::lblShowMuonPartPointSrc : norm(muonline) = 1.6834855369069759e-05
 Main::lblShowMuonPartPointSrc : muonline =
   (0.000279709,0.00139567) (-5.42101e-20,0.000279709)   (0.000279709,0.00139567) (-5.42101e-20,0.000279709)
@@ -287,60 +287,60 @@ Main::lblShowMuonPartPointSrc : linearFitUni = ( 1.6263032587282567E-19 +  2.791
 Main::lblShowMuonPartPointSrc : linearFit[0] * 1e9 =       0.00
 Main::lblShowMuonPartPointSrc : linearFit[1] * 1e9 =  -55967.91
 Main::lblShowMuonPartPointSrc : linearFit[2] * 1e9 =   55967.91
-Timer::stop  :        lblShowMuonPartPointSrc : 64.3%        1 calls. Last 6.101E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :        lblShowMuonPartPointSrc : 63.3%        1 calls. Last 6.307E+00 secs   0.000 Gflops (0.000E+00 flops)
 Timer::display-start :  fname : time% number of calls; Avg,Tot secs; Avg,Tot flops; Gflops
 Timer::display :            setPointSourcePlusM :  0.000%        3 calls; 0.00E+00,0.00E+00 secs; 0.00E+00,0.00E+00 flops;  -nan Gflops
 Timer::display :                    lblMuonPart :  0.000%        1 calls; 0.00E+00,0.00E+00 secs; 0.00E+00,0.00E+00 flops;  -nan Gflops
-Timer::display :                  displayGammas :  0.010%        1 calls; 9.17E-04,9.17E-04 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :         contractSpinPropagator :  0.112%        1 calls; 1.07E-02,1.07E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :            propMomPhotonInvert :  0.147%        3 calls; 4.64E-03,1.39E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :      fftComplexFieldPlan::init :  0.346%       16 calls; 2.05E-03,3.28E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :              setBoxSourcePlusM :  0.503%        4 calls; 1.19E-02,4.78E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :             setWallSourcePlusM :  0.512%        4 calls; 1.21E-02,4.86E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :   fftComplexFieldPlan::getPlan :  0.681%       80 calls; 8.08E-04,6.46E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                  fieldOperator :  0.683%       10 calls; 6.49E-03,6.49E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display : sequentialPhotonSpinPropagator :  1.378%        3 calls; 4.36E-02,1.31E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :        propMomSpinPropagator4d :  2.096%        7 calls; 2.84E-02,1.99E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :       fftComplexFieldDirs-fftw :  2.817%       80 calls; 3.34E-03,2.67E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :        displaySpinPropagator4d : 13.274%        1 calls; 1.26E+00,1.26E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :               propPhotonInvert : 15.112%        3 calls; 4.78E-01,1.43E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :    lblMagneticMomentSpinMatrix : 22.214%        1 calls; 2.11E+00,2.11E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                   getDataDirMu : 42.116%      200 calls; 2.00E-02,4.00E+00 secs; 1.63E+06,3.25E+08 flops;  0.08 Gflops
-Timer::display :    fftComplexFieldDirs-getData : 42.123%      200 calls; 2.00E-02,4.00E+00 secs; 1.63E+06,3.25E+08 flops;  0.08 Gflops
-Timer::display :                    lblMuonLine : 49.070%        1 calls; 4.66E+00,4.66E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :            lblMuonPartPointSrc : 64.248%        1 calls; 6.10E+00,6.10E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :        lblShowMuonPartPointSrc : 64.258%        1 calls; 6.10E+00,6.10E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :           propSpinPropagator4d : 81.660%        7 calls; 1.11E+00,7.75E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :            fftComplexFieldDirs : 93.753%       80 calls; 1.11E-01,8.90E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                fftComplexField : 93.754%       20 calls; 4.45E-01,8.90E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display-end   :  --------------------- total 9.4947E+00 secs ----------------------
-Timer::stop  :                    lblMuonPart : 86.5%        1 calls. Last 8.216E+00 secs   0.000 Gflops (0.000E+00 flops)
+Timer::display :                  displayGammas :  0.024%        1 calls; 2.37E-03,2.37E-03 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :              setBoxSourcePlusM :  0.175%        4 calls; 4.36E-03,1.74E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :            propMomPhotonInvert :  0.208%        3 calls; 6.89E-03,2.07E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :             setWallSourcePlusM :  0.223%        4 calls; 5.56E-03,2.22E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :      fftComplexFieldPlan::init :  0.325%       16 calls; 2.03E-03,3.24E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :         contractSpinPropagator :  0.357%        1 calls; 3.56E-02,3.56E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                  fieldOperator :  0.417%       10 calls; 4.16E-03,4.16E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :   fftComplexFieldPlan::getPlan :  0.625%       80 calls; 7.78E-04,6.22E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display : sequentialPhotonSpinPropagator :  1.158%        3 calls; 3.85E-02,1.15E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :        propMomSpinPropagator4d :  2.098%        7 calls; 2.99E-02,2.09E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :       fftComplexFieldDirs-fftw :  2.565%       80 calls; 3.19E-03,2.56E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :        displaySpinPropagator4d : 13.201%        1 calls; 1.32E+00,1.32E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :               propPhotonInvert : 14.807%        3 calls; 4.92E-01,1.48E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :    lblMagneticMomentSpinMatrix : 23.327%        1 calls; 2.32E+00,2.32E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                   getDataDirMu : 44.611%      200 calls; 2.22E-02,4.44E+00 secs; 1.63E+06,3.25E+08 flops;  0.07 Gflops
+Timer::display :    fftComplexFieldDirs-getData : 44.625%      200 calls; 2.22E-02,4.45E+00 secs; 1.63E+06,3.25E+08 flops;  0.07 Gflops
+Timer::display :                    lblMuonLine : 48.437%        1 calls; 4.83E+00,4.83E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :            lblMuonPartPointSrc : 63.294%        1 calls; 6.31E+00,6.31E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :        lblShowMuonPartPointSrc : 63.305%        1 calls; 6.31E+00,6.31E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :           propSpinPropagator4d : 82.587%        7 calls; 1.18E+00,8.23E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :            fftComplexFieldDirs : 94.550%       80 calls; 1.18E-01,9.42E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                fftComplexField : 94.552%       20 calls; 4.71E-01,9.42E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display-end   :  --------------------- total 9.9627E+00 secs ----------------------
+Timer::stop  :                    lblMuonPart : 86.7%        1 calls. Last 8.639E+00 secs   0.000 Gflops (0.000E+00 flops)
 Timer::display-start :  fname : time% number of calls; Avg,Tot secs; Avg,Tot flops; Gflops
 Timer::display :            setPointSourcePlusM :  0.000%        3 calls; 0.00E+00,0.00E+00 secs; 0.00E+00,0.00E+00 flops;  -nan Gflops
-Timer::display :                  displayGammas :  0.010%        1 calls; 9.17E-04,9.17E-04 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :         contractSpinPropagator :  0.112%        1 calls; 1.07E-02,1.07E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :            propMomPhotonInvert :  0.147%        3 calls; 4.64E-03,1.39E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :      fftComplexFieldPlan::init :  0.346%       16 calls; 2.05E-03,3.28E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :              setBoxSourcePlusM :  0.503%        4 calls; 1.19E-02,4.78E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :             setWallSourcePlusM :  0.512%        4 calls; 1.21E-02,4.86E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :   fftComplexFieldPlan::getPlan :  0.681%       80 calls; 8.08E-04,6.46E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                  fieldOperator :  0.683%       10 calls; 6.49E-03,6.49E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display : sequentialPhotonSpinPropagator :  1.378%        3 calls; 4.36E-02,1.31E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :        propMomSpinPropagator4d :  2.096%        7 calls; 2.84E-02,1.99E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :       fftComplexFieldDirs-fftw :  2.817%       80 calls; 3.34E-03,2.67E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :        displaySpinPropagator4d : 13.274%        1 calls; 1.26E+00,1.26E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :               propPhotonInvert : 15.112%        3 calls; 4.78E-01,1.43E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :    lblMagneticMomentSpinMatrix : 22.214%        1 calls; 2.11E+00,2.11E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                   getDataDirMu : 42.115%      200 calls; 2.00E-02,4.00E+00 secs; 1.63E+06,3.25E+08 flops;  0.08 Gflops
-Timer::display :    fftComplexFieldDirs-getData : 42.123%      200 calls; 2.00E-02,4.00E+00 secs; 1.63E+06,3.25E+08 flops;  0.08 Gflops
-Timer::display :                    lblMuonLine : 49.069%        1 calls; 4.66E+00,4.66E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :            lblMuonPartPointSrc : 64.248%        1 calls; 6.10E+00,6.10E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :        lblShowMuonPartPointSrc : 64.258%        1 calls; 6.10E+00,6.10E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :           propSpinPropagator4d : 81.658%        7 calls; 1.11E+00,7.75E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                    lblMuonPart : 86.526%        1 calls; 8.22E+00,8.22E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :            fftComplexFieldDirs : 93.752%       80 calls; 1.11E-01,8.90E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                fftComplexField : 93.753%       20 calls; 4.45E-01,8.90E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display-end   :  --------------------- total 9.4949E+00 secs ----------------------
+Timer::display :                  displayGammas :  0.024%        1 calls; 2.37E-03,2.37E-03 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :              setBoxSourcePlusM :  0.175%        4 calls; 4.36E-03,1.74E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :            propMomPhotonInvert :  0.208%        3 calls; 6.89E-03,2.07E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :             setWallSourcePlusM :  0.223%        4 calls; 5.56E-03,2.22E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :      fftComplexFieldPlan::init :  0.325%       16 calls; 2.03E-03,3.24E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :         contractSpinPropagator :  0.357%        1 calls; 3.56E-02,3.56E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                  fieldOperator :  0.417%       10 calls; 4.16E-03,4.16E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :   fftComplexFieldPlan::getPlan :  0.625%       80 calls; 7.78E-04,6.22E-02 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display : sequentialPhotonSpinPropagator :  1.158%        3 calls; 3.85E-02,1.15E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :        propMomSpinPropagator4d :  2.098%        7 calls; 2.99E-02,2.09E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :       fftComplexFieldDirs-fftw :  2.565%       80 calls; 3.19E-03,2.56E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :        displaySpinPropagator4d : 13.200%        1 calls; 1.32E+00,1.32E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :               propPhotonInvert : 14.806%        3 calls; 4.92E-01,1.48E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :    lblMagneticMomentSpinMatrix : 23.325%        1 calls; 2.32E+00,2.32E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                   getDataDirMu : 44.608%      200 calls; 2.22E-02,4.44E+00 secs; 1.63E+06,3.25E+08 flops;  0.07 Gflops
+Timer::display :    fftComplexFieldDirs-getData : 44.622%      200 calls; 2.22E-02,4.45E+00 secs; 1.63E+06,3.25E+08 flops;  0.07 Gflops
+Timer::display :                    lblMuonLine : 48.434%        1 calls; 4.83E+00,4.83E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :            lblMuonPartPointSrc : 63.291%        1 calls; 6.31E+00,6.31E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :        lblShowMuonPartPointSrc : 63.301%        1 calls; 6.31E+00,6.31E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :           propSpinPropagator4d : 82.582%        7 calls; 1.18E+00,8.23E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                    lblMuonPart : 86.702%        1 calls; 8.64E+00,8.64E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :            fftComplexFieldDirs : 94.545%       80 calls; 1.18E-01,9.42E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                fftComplexField : 94.546%       20 calls; 4.71E-01,9.42E+00 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display-end   :  --------------------- total 9.9630E+00 secs ----------------------
 Qlat::end : MPI Finalized.
 fftComplexFieldPlan::end : free a plan
 fftComplexFieldPlan::end : free a plan
@@ -359,9 +359,9 @@ fftComplexFieldPlan::end : free a plan
 fftComplexFieldPlan::end : free a plan
 fftComplexFieldPlan::end : free a plan
 
-real	0m10.703s
-user	0m31.084s
-sys	0m6.768s
+real	0m11.172s
+user	0m31.596s
+sys	0m7.268s
 make clean
 make[2]: Entering directory '/home/frank/application/Public/Qlattice-cc/examples/lbl-muon-part'
 rm qlat.x || :
@@ -373,28 +373,28 @@ make[2]: Entering directory '/home/frank/application/Public/Qlattice-cc/examples
 mpic++ -O2 -Wall -std=c++0x -o qlat.x -fopenmp -O2 -fno-strict-aliasing -Wall -I$HOME/qlat-builds/0.1/include -I$HOME/qlat-builds/0.1/include/eigen3 *.C -L$HOME/qlat-builds/0.1/lib -lgsl -lgslcblas -lm -lfftw3_omp -lfftw3 -lcrypto -lhash-cpp 2>&1 | grep --color=always 'error:\|' || true
 make[2]: Leaving directory '/home/frank/application/Public/Qlattice-cc/examples/rng-state-tests'
 
-real	0m3.146s
-user	0m2.976s
-sys	0m0.152s
+real	0m3.237s
+user	0m3.084s
+sys	0m0.132s
 [ -f qlat.x ]
 . $HOME/qlat-builds/0.1/setenv.sh ; time mpirun -x OMP_NUM_THREADS=8 --np 16 ./qlat.x
 Qlat::begin : MPI Initialized. NumNode = 16
-Qlat::GeometryNode::init() : idNode =     5 ; coorNode = 0x1x0x1
-Qlat::GeometryNode::init() : idNode =    15 ; coorNode = 0x1x1x3
-Qlat::GeometryNode::init() : idNode =     1 ; coorNode = 0x1x0x0
-Qlat::GeometryNode::init() : idNode =     7 ; coorNode = 0x1x1x1
-Qlat::GeometryNode::init() : idNode =     8 ; coorNode = 0x0x0x2
-Qlat::GeometryNode::init() : idNode =     9 ; coorNode = 0x1x0x2
-Qlat::GeometryNode::init() : idNode =     4 ; coorNode = 0x0x0x1
 Qlat::GeometryNode::init() : idNode =     0 ; coorNode = 0x0x0x0
+Qlat::GeometryNode::init() : idNode =     9 ; coorNode = 0x1x0x2
 Qlat::GeometryNode::init() : idNode =    10 ; coorNode = 0x0x1x2
-Qlat::GeometryNode::init() : idNode =     2 ; coorNode = 0x0x1x0
+Qlat::GeometryNode::init() : idNode =     1 ; coorNode = 0x1x0x0
+Qlat::GeometryNode::init() : idNode =     6 ; coorNode = 0x0x1x1
 Qlat::GeometryNode::init() : idNode =     3 ; coorNode = 0x1x1x0
-Qlat::GeometryNode::init() : idNode =    11 ; coorNode = 0x1x1x2
-Qlat::GeometryNode::init() : idNode =    13 ; coorNode = 0x1x0x3
+Qlat::GeometryNode::init() : idNode =     8 ; coorNode = 0x0x0x2
 Qlat::GeometryNode::init() : idNode =    12 ; coorNode = 0x0x0x3
 Qlat::GeometryNode::init() : idNode =    14 ; coorNode = 0x0x1x3
-Qlat::GeometryNode::init() : idNode =     6 ; coorNode = 0x0x1x1
+Qlat::GeometryNode::init() : idNode =     4 ; coorNode = 0x0x0x1
+Qlat::GeometryNode::init() : idNode =    11 ; coorNode = 0x1x1x2
+Qlat::GeometryNode::init() : idNode =    13 ; coorNode = 0x1x0x3
+Qlat::GeometryNode::init() : idNode =     2 ; coorNode = 0x0x1x0
+Qlat::GeometryNode::init() : idNode =     7 ; coorNode = 0x1x1x1
+Qlat::GeometryNode::init() : idNode =     5 ; coorNode = 0x1x0x1
+Qlat::GeometryNode::init() : idNode =    15 ; coorNode = 0x1x1x3
 Qlat::begin : MPI Cart created. GeometryNode =
 { initialized = true
 , numNode     = 16
@@ -405,41 +405,41 @@ sizeof RngState = 88
 Timer::start :                          test1 :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 expected: -0.231435
 -0.231335
-Timer::stop  :                          test1 :100.0%        1 calls. Last 3.133E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :                          test1 :100.0%        1 calls. Last 3.043E-01 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :                          test2 :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 expected: 0.682689
 0.68282
-Timer::stop  :                          test2 : 49.8%        1 calls. Last 3.111E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :                          test2 : 51.4%        1 calls. Last 3.215E-01 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :                         test2a :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 expected: 0.682689
 0.68282
-Timer::stop  :                         test2a : 33.2%        1 calls. Last 3.103E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :                         test2a : 33.8%        1 calls. Last 3.192E-01 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :                          test3 :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 Expected : 64
 Mean     : 62.1267
 Var      : 4.60684
-Timer::stop  :                          test3 : 18.1%        1 calls. Last 2.073E-01 secs   0.000 Gflops (0.000E+00 flops)
+Timer::stop  :                          test3 : 19.5%        1 calls. Last 2.284E-01 secs   0.000 Gflops (0.000E+00 flops)
 Timer::start :                     profileOmp :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 sum: 3.35528e+07
 avg: 0.499975
-Timer::stop  :                     profileOmp : 88.1%        1 calls. Last 8.418E+00 secs   0.008 Gflops (6.711E+07 flops)
+Timer::stop  :                     profileOmp : 88.0%        1 calls. Last 8.596E+00 secs   0.008 Gflops (6.711E+07 flops)
 Timer::start :                        profile :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
-sum: 4.99854e+06
-avg: 0.499854
-Timer::stop  :                        profile : 19.0%        1 calls. Last 2.245E+00 secs   0.004 Gflops (1.000E+07 flops)
+sum: 5.00038e+06
+avg: 0.500038
+Timer::stop  :                        profile : 18.4%        1 calls. Last 2.208E+00 secs   0.005 Gflops (1.000E+07 flops)
 Timer::display-start :  fname : time% number of calls; Avg,Tot secs; Avg,Tot flops; Gflops
-Timer::display :                          test3 :  1.756%        1 calls; 2.07E-01,2.07E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                         test2a :  2.628%        1 calls; 3.10E-01,3.10E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                          test2 :  2.636%        1 calls; 3.11E-01,3.11E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                          test1 :  2.653%        1 calls; 3.13E-01,3.13E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display :                        profile : 19.016%        1 calls; 2.24E+00,2.24E+00 secs; 1.00E+07,1.00E+07 flops;  0.00 Gflops
-Timer::display :                     profileOmp : 71.309%        1 calls; 8.42E+00,8.42E+00 secs; 6.71E+07,6.71E+07 flops;  0.01 Gflops
-Timer::display-end   :  --------------------- total 1.1805E+01 secs ----------------------
+Timer::display :                          test3 :  1.907%        1 calls; 2.28E-01,2.28E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                          test1 :  2.541%        1 calls; 3.04E-01,3.04E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                         test2a :  2.665%        1 calls; 3.19E-01,3.19E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                          test2 :  2.684%        1 calls; 3.21E-01,3.21E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display :                        profile : 18.437%        1 calls; 2.21E+00,2.21E+00 secs; 1.00E+07,1.00E+07 flops;  0.00 Gflops
+Timer::display :                     profileOmp : 71.765%        1 calls; 8.60E+00,8.60E+00 secs; 6.71E+07,6.71E+07 flops;  0.01 Gflops
+Timer::display-end   :  --------------------- total 1.1978E+01 secs ----------------------
 Qlat::end : MPI Finalized.
 
-real	0m12.964s
-user	0m37.200s
-sys	0m0.220s
+real	0m13.149s
+user	0m37.288s
+sys	0m0.248s
 make clean
 make[2]: Entering directory '/home/frank/application/Public/Qlattice-cc/examples/rng-state-tests'
 rm qlat.x || :
@@ -451,28 +451,28 @@ make[2]: Entering directory '/home/frank/application/Public/Qlattice-cc/examples
 mpic++ -O2 -Wall -std=c++0x -o qlat.x -fopenmp -O2 -fno-strict-aliasing -Wall -I$HOME/qlat-builds/0.1/include -I$HOME/qlat-builds/0.1/include/eigen3 *.C -L$HOME/qlat-builds/0.1/lib -lgsl -lgslcblas -lm -lfftw3_omp -lfftw3 -lcrypto -lhash-cpp 2>&1 | grep --color=always 'error:\|' || true
 make[2]: Leaving directory '/home/frank/application/Public/Qlattice-cc/examples/field-rng-tests'
 
-real	0m3.310s
-user	0m3.192s
-sys	0m0.100s
+real	0m3.415s
+user	0m3.332s
+sys	0m0.064s
 [ -f qlat.x ]
 . $HOME/qlat-builds/0.1/setenv.sh ; time mpirun -x OMP_NUM_THREADS=8 --np 16 ./qlat.x
 Qlat::begin : MPI Initialized. NumNode = 16
-Qlat::GeometryNode::init() : idNode =     7 ; coorNode = 0x1x1x1
-Qlat::GeometryNode::init() : idNode =    10 ; coorNode = 0x0x1x2
-Qlat::GeometryNode::init() : idNode =     0 ; coorNode = 0x0x0x0
 Qlat::GeometryNode::init() : idNode =     9 ; coorNode = 0x1x0x2
-Qlat::GeometryNode::init() : idNode =     1 ; coorNode = 0x1x0x0
-Qlat::GeometryNode::init() : idNode =     4 ; coorNode = 0x0x0x1
-Qlat::GeometryNode::init() : idNode =     6 ; coorNode = 0x0x1x1
+Qlat::GeometryNode::init() : idNode =    10 ; coorNode = 0x0x1x2
+Qlat::GeometryNode::init() : idNode =    11 ; coorNode = 0x1x1x2
 Qlat::GeometryNode::init() : idNode =    13 ; coorNode = 0x1x0x3
 Qlat::GeometryNode::init() : idNode =     2 ; coorNode = 0x0x1x0
 Qlat::GeometryNode::init() : idNode =     3 ; coorNode = 0x1x1x0
-Qlat::GeometryNode::init() : idNode =     8 ; coorNode = 0x0x0x2
-Qlat::GeometryNode::init() : idNode =    11 ; coorNode = 0x1x1x2
-Qlat::GeometryNode::init() : idNode =    12 ; coorNode = 0x0x0x3
-Qlat::GeometryNode::init() : idNode =    15 ; coorNode = 0x1x1x3
-Qlat::GeometryNode::init() : idNode =    14 ; coorNode = 0x0x1x3
+Qlat::GeometryNode::init() : idNode =     0 ; coorNode = 0x0x0x0
 Qlat::GeometryNode::init() : idNode =     5 ; coorNode = 0x1x0x1
+Qlat::GeometryNode::init() : idNode =     8 ; coorNode = 0x0x0x2
+Qlat::GeometryNode::init() : idNode =     1 ; coorNode = 0x1x0x0
+Qlat::GeometryNode::init() : idNode =    12 ; coorNode = 0x0x0x3
+Qlat::GeometryNode::init() : idNode =     4 ; coorNode = 0x0x0x1
+Qlat::GeometryNode::init() : idNode =    14 ; coorNode = 0x0x1x3
+Qlat::GeometryNode::init() : idNode =     6 ; coorNode = 0x0x1x1
+Qlat::GeometryNode::init() : idNode =     7 ; coorNode = 0x1x1x1
+Qlat::GeometryNode::init() : idNode =    15 ; coorNode = 0x1x1x3
 Qlat::begin : MPI Cart created. GeometryNode =
 { initialized = true
 , numNode     = 16
@@ -482,81 +482,81 @@ Qlat::begin : MPI Cart created. GeometryNode =
 Timer::start :                          test1 :  0.0%        1 calls. Last -NAN secs    -nan Gflops (0.000E+00 flops)
 traj     : 0
 Expected : 16
-Mean     : 16.1055
-Var      : 0.170024
+Mean     : 16.2667
+Var      : 0.170914
 traj     : 1
 Expected : 16
-Mean     : 16.0399
-Var      : 0.171523
+Mean     : 15.9151
+Var      : 0.169695
 traj     : 2
 Expected : 16
-Mean     : 16.0277
-Var      : 0.168621
+Mean     : 15.9296
+Var      : 0.169576
 traj     : 3
 Expected : 16
-Mean     : 15.7314
-Var      : 0.170863
+Mean     : 15.8882
+Var      : 0.171936
 traj     : 4
 Expected : 16
-Mean     : 16.0471
-Var      : 0.170798
+Mean     : 16.0307
+Var      : 0.170151
 traj     : 5
 Expected : 16
-Mean     : 16.1145
-Var      : 0.170581
+Mean     : 15.9179
+Var      : 0.170504
 traj     : 6
 Expected : 16
-Mean     : 16.1572
-Var      : 0.174171
+Mean     : 15.7592
+Var      : 0.168649
 traj     : 7
 Expected : 16
-Mean     : 15.9283
-Var      : 0.169888
+Mean     : 16.0074
+Var      : 0.171987
 traj     : 8
 Expected : 16
-Mean     : 15.992
-Var      : 0.172003
+Mean     : 15.8448
+Var      : 0.169776
 traj     : 9
 Expected : 16
-Mean     : 15.9148
-Var      : 0.170854
+Mean     : 15.9083
+Var      : 0.169385
 traj     : 10
 Expected : 16
-Mean     : 15.9879
-Var      : 0.174468
+Mean     : 15.8939
+Var      : 0.168397
 traj     : 11
 Expected : 16
-Mean     : 16.1991
-Var      : 0.174221
+Mean     : 15.8584
+Var      : 0.169718
 traj     : 12
 Expected : 16
-Mean     : 16.0036
-Var      : 0.17219
+Mean     : 16.1973
+Var      : 0.172345
 traj     : 13
 Expected : 16
-Mean     : 15.9413
-Var      : 0.173296
+Mean     : 16.1563
+Var      : 0.170047
 traj     : 14
 Expected : 16
-Mean     : 16.1781
-Var      : 0.171968
+Mean     : 15.8114
+Var      : 0.16916
 traj     : 15
 Expected : 16
-Mean     : 16.0576
-Var      : 0.174745
+Mean     : 15.8987
+Var      : 0.169035
 # Final
 Expected : 16
-Mean     : 16.0266
-Var      : 0.0292303
-Timer::stop  :                          test1 : 99.8%        1 calls. Last 7.613E-01 secs   0.000 Gflops (0.000E+00 flops)
+Mean     : 15.9552
+Var      : 0.0355024
+Timer::stop  :                          test1 : 99.6%        1 calls. Last 6.419E-01 secs   0.000 Gflops (0.000E+00 flops)
 Timer::display-start :  fname : time% number of calls; Avg,Tot secs; Avg,Tot flops; Gflops
-Timer::display :                          test1 : 99.760%        1 calls; 7.61E-01,7.61E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
-Timer::display-end   :  --------------------- total 7.6309E-01 secs ----------------------
+Timer::display :                          test1 : 99.634%        1 calls; 6.42E-01,6.42E-01 secs; 0.00E+00,0.00E+00 flops;  0.00 Gflops
+Timer::display-end   :  --------------------- total 6.4423E-01 secs ----------------------
 Qlat::end : MPI Finalized.
 
-real	0m1.933s
-user	0m2.996s
-sys	0m0.472s
+real	0m1.823s
+user	0m2.580s
+sys	0m0.392s
 make clean
 make[2]: Entering directory '/home/frank/application/Public/Qlattice-cc/examples/field-rng-tests'
 rm qlat.x || :
